@@ -14,18 +14,36 @@ export default function BasicTable() {
     data, // Short Handed the data:data
   });
 
+  // Necessary Properties
+  const { getTableProps, getTableBodyProps } = tableInstance; // Get Props
+  const { headerGroups, rows, prepareRow } = tableInstance; // Get Methods
+
   // Return
   return (
-    <table>
+    <table {...getTableProps()}>
       <thead>
-        <tr>
-          <th></th>
-        </tr>
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+            ))}
+          </tr>
+        ))}
       </thead>
-      <tbody>
-        <tr>
-          <td></td>
-        </tr>
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row) => {
+          // prepare rows
+          prepareRow(row);
+
+          // Return
+          return (
+            <tr {...row.getRowProps()}>
+              {row.cells.map((cell) => (
+                <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+              ))}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
