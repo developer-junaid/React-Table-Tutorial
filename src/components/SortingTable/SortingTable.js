@@ -1,19 +1,22 @@
 import React, { useMemo } from "react";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import MOCK_DATA from "../../data/MOCK_DATA.json";
 import { COLUMNS } from "../functions/columns";
-import "./basicTable.css";
+import "./sortingTable.css";
 
-export default function BasicTable() {
+export default function SortingTable() {
   // Memorize data once - data won't be recreated on every render
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
 
   // Create table instance
-  const tableInstance = useTable({
-    columns, // Short Handed the columns:columns
-    data, // Short Handed the data:data
-  });
+  const tableInstance = useTable(
+    {
+      columns, // Short Handed the columns:columns
+      data, // Short Handed the data:data
+    },
+    useSortBy // Sorting Feature added
+  );
 
   // Necessary Properties
   const { getTableProps, getTableBodyProps } = tableInstance; // Get Props
@@ -26,7 +29,16 @@ export default function BasicTable() {
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                {column.render("Header")}
+                <span>
+                  {column.isSorted
+                    ? column.isSortedDesc
+                      ? "Desc"
+                      : "Asc"
+                    : ""}
+                </span>
+              </th>
             ))}
           </tr>
         ))}
