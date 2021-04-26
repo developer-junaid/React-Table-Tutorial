@@ -32,11 +32,7 @@ export default function SortingTable() {
               <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render("Header")}
                 <span>
-                  {column.isSorted
-                    ? column.isSortedDesc
-                      ? "Desc"
-                      : "Asc"
-                    : ""}
+                  {column.isSorted ? (column.isSortedDesc ? " ⬇" : " ⬆") : ""}
                 </span>
               </th>
             ))}
