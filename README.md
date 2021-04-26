@@ -21,3 +21,10 @@
 - - add **footer html**
 - - implement **footerGroup**s and bring footer UI to life
 - - **Add Css**
+
+6. Header Groups
+7. Sorting
+8. Filtering
+
+- - Global Filtering
+- - Column Filtering
