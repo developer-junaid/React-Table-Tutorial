@@ -18,7 +18,8 @@ table tr:hover {
   background-color: #ddd;
 }
 
-table th {
+table th,
+tfoot td {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;

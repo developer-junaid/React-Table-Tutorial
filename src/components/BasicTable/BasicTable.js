@@ -17,7 +17,7 @@ export default function BasicTable() {
 
   // Necessary Properties
   const { getTableProps, getTableBodyProps } = tableInstance; // Get Props
-  const { headerGroups, rows, prepareRow } = tableInstance; // Get Methods
+  const { headerGroups, rows, prepareRow, footerGroups } = tableInstance; // Get Methods
 
   // Return
   return (
@@ -46,6 +46,15 @@ export default function BasicTable() {
           );
         })}
       </tbody>
+      <tfoot>
+        {footerGroups.map((footerGroup) => (
+          <tr {...footerGroup.getFooterGroupProps()}>
+            {footerGroup.headers.map((column) => (
+              <td {...column.getFooterProps()}>{column.render("Footer")}</td>
+            ))}
+          </tr>
+        ))}
+      </tfoot>
     </table>
   );
 }
