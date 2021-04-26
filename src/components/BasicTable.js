@@ -15,5 +15,18 @@ export default function BasicTable() {
   });
 
   // Return
-  return <h1>Table</h1>;
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  );
 }
