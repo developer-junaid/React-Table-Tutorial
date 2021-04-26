@@ -1,10 +1,10 @@
 import React from "react";
-import Table from "./components/Table";
+import BasicTable from "./components/BasicTable";
 
 const App = () => {
   return (
     <div>
-      <Table />
+      <BasicTable />
     </div>
   );
 };
