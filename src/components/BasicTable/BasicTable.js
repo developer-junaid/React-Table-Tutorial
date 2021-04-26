@@ -1,7 +1,8 @@
 import React, { useMemo } from "react";
 import { useTable } from "react-table";
-import MOCK_DATA from "./../data/MOCK_DATA.json";
-import { COLUMNS } from "./functions/columns";
+import MOCK_DATA from "../../data/MOCK_DATA.json";
+import { COLUMNS } from "../functions/columns";
+import "./basicTable.css";
 
 export default function BasicTable() {
   // Memorize data once - data won't be recreated on every render
