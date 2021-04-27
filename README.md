@@ -27,9 +27,19 @@
 8. Global Filtering (steps)
 
 - - Create Filter Input component
+- - Accept filter and setFilter as props
 - - import useGlobalFilter hook from react-table
 - - set useGlobalFilter hook in table instance
 - - destructure state and setGlobalFilter from table instance
 - - destructure globalFilter from state
 - - Add GlobalFilter Component on top of table inside a wrapper
 - - set filter prop as globalFilter and setFilter prop as setGlobalFilter
+
+9. Column Filtering (steps)
+
+- - Create Filter Input component
+- - Accept column as props (and destructure filterValue and setFilter)
+- - import useFilters hooks from react-table
+- - set useFilters hook in table instance
+- - set Filters: ColumnFilter in the column definition of each column
+- - conditionally render filter in th of column headers
