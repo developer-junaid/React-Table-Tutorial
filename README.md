@@ -24,7 +24,12 @@
 
 6. Header Groups
 7. Sorting
-8. Filtering
+8. Global Filtering (steps)
 
-- - Global Filtering
-- - Column Filtering
+- - Create Filter Input component
+- - import useGlobalFilter hook from react-table
+- - set useGlobalFilter hook in table instance
+- - destructure state and setGlobalFilter from table instance
+- - destructure globalFilter from state
+- - Add GlobalFilter Component on top of table inside a wrapper
+- - set filter prop as globalFilter and setFilter prop as setGlobalFilter
