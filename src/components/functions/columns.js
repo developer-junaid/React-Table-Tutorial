@@ -8,6 +8,7 @@ export const COLUMNS = [
     accessor: "id",
     Footer: "Id",
     Filter: ColumnFilter,
+    disableFilters: true,
   },
   {
     Header: "First Name",
