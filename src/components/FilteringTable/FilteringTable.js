@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { useTable, useGlobalFilter, useFilters } from "react-table";
 import MOCK_DATA from "../../data/MOCK_DATA.json";
 import { COLUMNS } from "../functions/columns";
+import { ColumnFilter } from "./ColumnFilter";
 import "./filteringTable.css";
 import { GlobalFilter } from "./GlobalFilter";
 
@@ -9,12 +10,18 @@ export default function FilteringTable() {
   // Memorize data once - data won't be recreated on every render
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
+  const defaultColumn = useMemo(() => {
+    return {
+      Filter: ColumnFilter,
+    };
+  }, []);
 
   // Create table instance
   const tableInstance = useTable(
     {
       columns, // Short Handed the columns:columns
       data, // Short Handed the data:data
+      defaultColumn, // Common columns for all
     },
     useFilters,
     useGlobalFilter
