@@ -43,3 +43,9 @@
 - - set useFilters hook in table instance
 - - set Filters: ColumnFilter in the column definition of each column
 - - conditionally render filter in th of column headers
+
+10. Pagination (steps)
+
+- - import usePagination from 'react-table'
+- - destructure page from table instance
+- - use page instead of rows in the body section
