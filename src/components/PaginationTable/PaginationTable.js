@@ -14,6 +14,7 @@ export default function PaginationTable() {
     {
       columns, // Short Handed the columns:columns
       data, // Short Handed the data:data
+      initialState: { pageIndex: 0 },
     },
     usePagination
   );
@@ -29,6 +30,8 @@ export default function PaginationTable() {
     canNextPage,
     canPreviousPage,
     pageOptions,
+    gotoPage,
+    pageCount,
     state,
   } = tableInstance; // Get Methods
 
@@ -63,19 +66,47 @@ export default function PaginationTable() {
           })}
         </tbody>
       </table>
-      <div style={{ margin: "0 auto" }}>
-        <span>
-          page{" "}
-          <strong>
-            {pageIndex + 1} of {pageOptions.length}
-          </strong>{" "}
-        </span>
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-          Previous
-        </button>
-        <button disabled={!canNextPage} onClick={() => nextPage()}>
-          Next
-        </button>
+      <div className="pagination">
+        <div className="page-info">
+          {" "}
+          <span>
+            page{" "}
+            <strong>
+              {pageIndex + 1} of {pageOptions.length} &nbsp;
+            </strong>{" "}
+          </span>
+          <span>
+            {"   "}
+            | Go to page
+            <input
+              type="number"
+              defaultValue={pageIndex + 1}
+              onChange={(e) => {
+                const pageNumber = e.target.value
+                  ? Number(e.target.value) - 1
+                  : 0;
+                gotoPage(pageNumber);
+              }}
+            />
+          </span>
+        </div>
+        <div className="page-controls">
+          <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+            {"<<"}
+          </button>
+          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+            Previous
+          </button>
+          <button disabled={!canNextPage} onClick={() => nextPage()}>
+            Next
+          </button>
+          <button
+            onClick={() => gotoPage(pageCount - 1)}
+            disabled={!canNextPage}
+          >
+            {">>"}
+          </button>
+        </div>
       </div>
     </>
   );
