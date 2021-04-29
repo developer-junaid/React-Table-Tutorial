@@ -68,3 +68,15 @@ tfoot td {
   max-width: 40px;
   text-align: center;
 }
+
+.pagination select {
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  text-align: center;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.pagination option {
+  cursor: pointer;
+}
