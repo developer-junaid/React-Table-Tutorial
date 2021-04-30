@@ -4,6 +4,7 @@ import FilteringTable from "./components/FilteringTable/FilteringTable";
 import PaginationTable from "./components/PaginationTable/PaginationTable";
 import SortingTable from "./components/SortingTable/SortingTable";
 import "./app.css";
+import RowSelection from "./components/RowSelection/RowSelection";
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
       {/* <BasicTable /> */}
       {/* <SortingTable /> */}
       {/* <FilteringTable /> */}
-      <PaginationTable />
+      {/* <PaginationTable /> */}
+      <RowSelection />
     </div>
   );
 };

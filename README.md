@@ -49,3 +49,9 @@
 - - import usePagination from 'react-table'
 - - destructure page from table instance
 - - use page instead of rows in the body section
+
+11. Selecting Rows (steps)
+
+- - Create component for selecting rows
+- - Import and then pass useRowSelect in useTable hook
+- - Import selectedFlatRows from useTable
