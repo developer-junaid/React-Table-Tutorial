@@ -7,6 +7,7 @@ import "./app.css";
 import RowSelection from "./components/RowSelection/RowSelection";
 import ColumnHiding from "./components/ColumnHiding/ColumnHiding";
 import ColumnOrder from "./components/ColumnOrder/ColumnOrder";
+import StickyTable from "./components/StickyTable/StickyTable";
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
       {/* <PaginationTable /> */}
       {/* <RowSelection /> */}
       {/* <ColumnOrder /> */}
-      <ColumnHiding />
+      {/* <ColumnHiding /> */}
+      <StickyTable />
     </div>
   );
 };

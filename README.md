@@ -52,3 +52,7 @@
 
 11. Selecting Rows
 12. Column Hiding
+13. Sticky Columns
+
+- - install `npm i react-table-sticky`
+- - install `npm i styled-components`

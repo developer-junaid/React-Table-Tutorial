@@ -8,16 +8,19 @@ export const COLUMNS = [
     accessor: "id",
     Footer: "Id",
     disableFilters: true,
+    sticky: "left",
   },
   {
     Header: "First Name",
     accessor: "first_name",
     Footer: "First Name",
+    sticky: "left",
   },
   {
     Header: "Last Name",
     accessor: "last_name",
     Footer: "Last Name",
+    sticky: "left",
   },
   {
     Header: "Date of Birth",
@@ -33,9 +36,14 @@ export const COLUMNS = [
     Footer: "Country",
   },
   {
-    Header: "Phone",
-    accessor: "phone",
-    Footer: "Phone",
+    Header: "Email",
+    accessor: "email",
+    Footer: "Email",
+  },
+  {
+    Header: "Age",
+    accessor: "age",
+    Footer: "Age",
   },
 ];
 
